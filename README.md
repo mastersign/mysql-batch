@@ -46,7 +46,7 @@ Example for `config.ini`:
 
 ~~~ini
 [database.my-server]
-host = 10.123.45.1
+host = 10.123.45.1:3306
 schema = target_db
 user = root
 password =
