@@ -29,7 +29,7 @@ RUN install_clean \
 # RUN pip install --user -r /app/requirements.txt
 
 # Install application files
-COPY mysql_batch.py /app/mysql_batch.py
+COPY *.py /app/
 RUN touch /app/config.ini
 
 # Set working directory
@@ -37,7 +37,7 @@ WORKDIR /app
 
 # Setup image start
 # ENTRYPOINT ["/sbin/my_init"]
-ENTRYPOINT ["/usr/local/bin/python3", "/app/mysql_batch.py", "-c", "/app/config.ini", "/app/scripts"]
+ENTRYPOINT ["/usr/bin/python3", "/app/mysql_batch.py", "-c", "/app/config.ini", "/app/scripts"]
 
 # Add labels to the image
 LABEL org.label-schema.vcs-url="https://github.com/mastersign/mysql-batch"
