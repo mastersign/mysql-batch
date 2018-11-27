@@ -11,7 +11,7 @@ from mastersign_config import Configuration
 from mastersign_mysql import execute_sql_file
 
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 SqlStep = namedtuple('SqlStep', ['no', 'name', 'script'])
 
