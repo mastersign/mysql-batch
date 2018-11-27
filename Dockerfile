@@ -38,3 +38,6 @@ WORKDIR /app
 # Setup image start
 # ENTRYPOINT ["/sbin/my_init"]
 ENTRYPOINT ["/usr/local/bin/python3", "/app/mysql_batch.py", "-c", "/app/config.ini", "/app/scripts"]
+
+# Add labels to the image
+LABEL org.label-schema.vcs-url="https://github.com/mastersign/mysql-batch"
