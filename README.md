@@ -57,15 +57,16 @@ password =
 ~~~
 usage: mysql_batch.py [-h] [-v] [-d] [-n [NO [NO ...]]] [-xn [NO [NO ...]]]
                       [-f NO] [-t NO] [-g PATTERN] [-xg PATTERN] [-r REGEX]
-                      [-xr REGEX] [-c CONFIG_FILES] [-o OPTIONS [OPTIONS ...]]
-                      source_dir target
+                      [-xr REGEX] [-u] [-c CONFIG_FILES]
+                      [-o OPTIONS [OPTIONS ...]]
+                      SOURCE_DIR TARGET_SERVER
 
 Run multiple SQL scripts on a MySQL server.
 
 positional arguments:
-  source_dir            A path to the directory with SQL scripts named
+  SOURCE_DIR            A path to the directory with SQL scripts named
                         <no>_<name>.sql.
-  target                The name of the target database in the configuration.
+  TARGET_SERVER         The name of the target database in the configuration.
                         This is the database to execute the scripts on.
 
 optional arguments:
@@ -89,6 +90,7 @@ optional arguments:
                         include steps, which name matches the given regex
   -xr REGEX, --exclude-re REGEX
                         include steps, which name matches the given regex
+  -u, --use-database    preselect the schema specified in the configuration
   -c CONFIG_FILES, --config-file CONFIG_FILES
                         A path to a configuration file in UTF-8 encoded INI
                         format. This argument can be used multiple times.
