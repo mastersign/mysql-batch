@@ -77,6 +77,8 @@ def parse_args():
                         help='include steps, which name matches the given regex')
     parser.add_argument('-xr', '--exclude-re', dest='re_exclude', type=str, metavar='REGEX',
                         help='include steps, which name matches the given regex')
+    parser.add_argument('-u', '--use-database', dest='use_database', action='store_true',
+                        help='preselect the schema specified in the configuration')
     parser.add_argument('source_dir', metavar='SOURCE_DIR',
                         help='A path to the directory with SQL scripts named <no>_<name>.sql.')
     parser.add_argument('target', metavar='TARGET_SERVER',
@@ -106,7 +108,8 @@ def run():
     else:
         for step in steps:
             print('Executing [{}] {} ...'.format(str(step.no).rjust(3, '0'), step.name))
-            if not execute_sql_file(cfg, args.target, step.script):
+            if not execute_sql_file(cfg, args.target, step.script,
+                                    use_database=args.use_database):
                 print('Executing [{}] {} FAILED'.format(str(step.no).rjust(3, '0'), step.name))
                 return 1
 
