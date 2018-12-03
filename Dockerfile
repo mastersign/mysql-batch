@@ -40,4 +40,7 @@ WORKDIR /app
 ENTRYPOINT ["/usr/bin/python3", "/app/mysql_batch.py", "-c", "/app/config.ini", "/app/scripts"]
 
 # Add labels to the image
-LABEL org.label-schema.vcs-url="https://github.com/mastersign/mysql-batch"
+LABEL org.opencontainers.image.title="Mastersign MySQL Batch"
+LABEL org.opencontainers.image.description="Run multiple SQL scripts against a MySQL server."
+LABEL org.opencontainers.image.source="https://github.com/mastersign/mysql-batch"
+LABEL org.opencontainers.image.documentation="https://github.com/mastersign/mysql-batch/blob/master/README.md"
