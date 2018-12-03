@@ -1,6 +1,6 @@
 # MySQL Batch
 
-> Run a number of SQL scripts on a MySQL server.
+> Run multiple SQL scripts against a MySQL server.
 
 ## Usage
 Prepare a directory with SQL scripts, named according to the scheme `<no>_<name>.sql`.
